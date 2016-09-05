@@ -48,3 +48,20 @@ ln -f -s $PREFIX/mysql/lib/libmysqlclient.so.18 /usr/lib
 
 chkconfig --level 3 mysql.server on
 /etc/init.d/mysql.server start
+
+echo "input mysql root password:"
+read ROOT_PASSWD
+echo "input mysql new user:"
+read NEW_USER
+echo "input mysql user password:"
+read USER_PASSWD
+
+cat >grant.sql <<EOF
+delete from mysql.user where user='';
+update mysql.user  set authentication_string=password('${ROOT_PASSWD}') where user ='root';
+GRANT ALL PRIVILEGES ON *.* TO '${NEW_USER}'@'%'     IDENTIFIED BY '${USER_PASSWD}' WITH GRANT OPTION;
+
+flush privileges;
+EOF
+
+$PREFIX/mysql/bin/mysql -u root < grant.sql
