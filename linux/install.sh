@@ -30,8 +30,10 @@ su - ${USER} <<EOF
     mkdir -p ~/python/bin
     echo '/tmp/virtualenv-13.1.2/virtualenv.py \$1' > ~/python/bin/virtualenv
     chmod 755 ~/python/bin/virtualenv
+    echo 'export JAVA_HOME=/usr/java/jdk1.8.0_45'
+    echo 'export PATH=\$PATH:\$JAVA_HOME/bin\n' >> ~/.bashrc
     echo 'export PATH=~/python/bin:\$PATH' >> ~/.bashrc
-    source ~/.bashrc
+    exec bash
  
     virtualenv ~/python
     easy_install supervisor
