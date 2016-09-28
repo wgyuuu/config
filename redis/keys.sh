@@ -4,7 +4,7 @@ HOST=localhost
 PORT=6379
 BASH_PATH="./redis-bash"
 
-while getopts :kd opt; do
+while getopts k:d opt; do
         case $opt in
                 k)
                         MATCH=$OPTARG
@@ -24,6 +24,7 @@ if [ -z ${MATCH} ]; then
 else
         KEYS="*${MATCH}*"
 fi
+
 KEY_LIST=`${BASH_PATH}/redis-bash-cli -h ${HOST} -p ${PORT} keys "${KEYS}"`
 if [ ${ISDEL} ];then
         echo ${KEY_LIST} | xargs ${BASH_PATH}/redis-bash-cli -h ${HOST} -p ${PORT} del
