@@ -73,7 +73,7 @@ max-connections                = 500
 thread-cache-size              = 50
 open-files-limit               = 65535
 table-definition-cache         = 4096
-table-open-cache               = 1000
+table-open-cache               = 2048
 
 # INNODB #
 innodb-flush-method            = O_DIRECT
@@ -81,7 +81,7 @@ innodb-log-files-in-group      = 2
 innodb-log-file-size           = 256M
 innodb-flush-log-at-trx-commit = 1
 innodb-file-per-table          = 1
-innodb-buffer-pool-size        = 2G
+innodb-buffer-pool-size        = 4G
 innodb_data_home_dir 		   = /data/mysql/data/
 innodb-data-file-path          = ibdata1:100M;ibdata2:100M:autoextend
 
@@ -89,5 +89,5 @@ innodb-data-file-path          = ibdata1:100M;ibdata2:100M:autoextend
 log-error                      = /data/mysql/data/mysql-error.log
 log-queries-not-using-indexes  = 1
 slow-query-log                 = 1
-long_query_time = 3
+long_query_time                = 3
 slow-query-log-file            = /data/mysql/data/mysql-slow.log
