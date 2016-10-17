@@ -11,6 +11,8 @@ else
 fi
 
 # yum install -y zsh
+yum install -y gcc gcc-c++
+yum install -y zip unzip
 yum install -y tmux
 yum install -y git
 
@@ -31,7 +33,7 @@ su - ${USER} <<EOF
     echo '/tmp/virtualenv-13.1.2/virtualenv.py \$1' > ~/python/bin/virtualenv
     chmod 755 ~/python/bin/virtualenv
     echo 'export JAVA_HOME=/usr/java/jdk1.8.0_45' >> ~/.bashrc
-    echo 'export PATH=\$PATH:\$JAVA_HOME/bin\n' >> ~/.bashrc
+    echo 'export PATH=\$PATH:\$JAVA_HOME/bin' >> ~/.bashrc
     echo 'export PATH=~/python/bin:\$PATH' >> ~/.bashrc
  
     ~/python/bin/virtualenv ~/python
