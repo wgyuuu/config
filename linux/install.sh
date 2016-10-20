@@ -35,6 +35,8 @@ su - ${USER} <<EOF
     echo 'export JAVA_HOME=/usr/java/jdk1.8.0_45' >> ~/.bashrc
     echo 'export PATH=\$PATH:\$JAVA_HOME/bin' >> ~/.bashrc
     echo 'export PATH=~/python/bin:\$PATH' >> ~/.bashrc
+    echo '' >> ~/.bashrc
+    echo 'alias superctl=\"supervisorctl -s http://localhost:9500 -u \'casino\' -p \'casino!!@@__))\'\"' >> ~/.bashrc
  
     ~/python/bin/virtualenv ~/python
     ~/python/bin/easy_install supervisor

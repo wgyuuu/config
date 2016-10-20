@@ -55,11 +55,13 @@ echo "input mysql new user:"
 read NEW_USER
 echo "input mysql user password:"
 read USER_PASSWD
+echo "input mysql user ip:"
+read USER_IP
 
 cat >grant.sql <<EOF
 delete from mysql.user where user='';
 update mysql.user  set authentication_string=password('${ROOT_PASSWD}') where user ='root';
-GRANT ALL PRIVILEGES ON *.* TO '${NEW_USER}'@'%'     IDENTIFIED BY '${USER_PASSWD}' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO '${NEW_USER}'@'${USER_IP}'     IDENTIFIED BY '${USER_PASSWD}' WITH GRANT OPTION;
 
 flush privileges;
 EOF

@@ -21,6 +21,6 @@ ln -s /usr/local/nginx-1.11.1 /usr/local/nginx
 
 # 进入nginx dir
 
-./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.35 --add-module=/path/to/echo-nginx-module-0.59 --add-module=/path/to/ngx_http_lower_upper_case-master
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.35 --add-module=/path/to/echo-nginx-module-0.59 --add-module=/path/to/ngx_http_lower_upper_case-master --conf-path=/etc/nginx
 make && make install
 
