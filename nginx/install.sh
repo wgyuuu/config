@@ -12,15 +12,20 @@ wget -c http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
 tar -zxvf /tmp/pcre-8.35.tar.gz -C /usr/local/src/
 cd /usr/local/src/pcre-8.35 && \
     ./configure && \
-    make && make install \
-    make clean \
+    make && make install && \
+    make clean && \
     cd -
 
 tar -zxvf nginx-1.11.1.tar.gz -C /usr/local/
 ln -s /usr/local/nginx-1.11.1 /usr/local/nginx
+ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
+mkdir -p /etc/nginx
 
 # 进入nginx dir
 
-./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.35 --add-module=/path/to/echo-nginx-module-0.59 --add-module=/path/to/ngx_http_lower_upper_case-master --conf-path=/etc/nginx
-make && make install
+cd /usr/local/nginx && \
+    ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.35 --add-module=/path/to/echo-nginx-module-0.59 --add-module=/path/to/ngx_http_lower_upper_case-master --conf-path=/etc/nginx && \
+    make && make install && \
+    cd -
+
 

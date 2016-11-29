@@ -1,0 +1,4 @@
+"go.formatOnSave": false,
+"go.formatTool": "goreturns",
+"go.goroot": "/usr/local/go",
+"go.gopath": "/Users/admin/go",

@@ -1,0 +1,29 @@
+[
+    {
+        "key": "ctrl+r",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "editor.action.previewDeclaration",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
+        "key": "cmd+y",
+        "command": "redo",
+        "when": "editorTextFocus"
+    }
+]
