@@ -28,4 +28,3 @@ cd /usr/local/nginx && \
     make && make install && \
     cd -
 
-
