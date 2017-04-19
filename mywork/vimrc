@@ -1,4 +1,4 @@
-"开启中文帮助
+"开启中文帮助i
 set helplang=cn
 
 "开启鼠标支持
@@ -96,8 +96,8 @@ set background=dark
 filetype off        " required
 
 "Ag
-let g:ackprg = 'ag --vimgrep'
-let g:ag_working_path_mode="r"
+" set runtimepath^=~/.vim/bundle/ag.vim
+" let g:ackprg = 'ag --vimgrep'
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -176,6 +176,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'yonchu/accelerated-smooth-scroll'
 "Plugin 'scrooloose/syntastic'
+Plugin 'evanmiller/nginx-vim-syntax'
 
 call vundle#end()            " required
 
@@ -193,6 +194,10 @@ filetype plugin on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" YCM settings
+let g:ycm_key_list_select_completion = ['', '']
+let g:ycm_key_list_previous_completion = ['']
+let g:ycm_key_invoke_completion = '<C-Space>'
 
 " UltiSnips setting
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -207,10 +212,10 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 "ack 文件文本内容搜索
-map <F4> :Ack! -i  ~/project/go/src<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+map <F4> :Ack! -i 
 
 "code快捷键
-map <F9> :r ~/code/go_
+map <F9> :r ~/go/code/
 
 " set mapleader
 let mapleader = ","
@@ -434,6 +439,7 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType java set omnifunc=javacomplete#Complete
+autocmd FileType php set omnifunc=phpcomplete#Complete
 if has("autocmd") && exists("+omnifunc")
 autocmd Filetype *
 \ if &omnifunc == "" |
