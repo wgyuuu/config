@@ -1,10 +1,14 @@
 #!/bin/zsh
 #
 
-source ~/.zsh_config
-
 ZSH_THEME="powerline"
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+if [ -f ~/.zsh_config ]; then
+	source ~/.zsh_config
+fi
+if [ `uname` = 'Darwin' ]; then
+	[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+fi
 
 export PATH=/usr/local/sbin:$PATH
 

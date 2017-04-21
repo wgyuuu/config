@@ -171,13 +171,13 @@ Plugin 'vim-scripts/ZoomWin'
 Plugin 'SirVer/ultisnips'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ShowTrailingWhitespace'
-"Plugin 'AutoClose'
 Plugin 'matchit.zip'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'evanmiller/nginx-vim-syntax'
+"Plugin 'AutoClose'
 "Plugin 'yonchu/accelerated-smooth-scroll'
 "Plugin 'scrooloose/syntastic'
-Plugin 'evanmiller/nginx-vim-syntax'
 
 call vundle#end()            " required
 
