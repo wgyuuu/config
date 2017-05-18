@@ -6,10 +6,8 @@ ZSH_THEME="powerline"
 if [ -f ~/.zsh_config ]; then
 	source ~/.zsh_config
 fi
-if [ `uname` = 'Darwin' ]; then
-	[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-fi
 
+# path
 export PATH=/usr/local/sbin:$PATH
 
 # openssl
@@ -25,7 +23,7 @@ export PATH=/usr/local/sbin:$PATH
 
 # go
 export GOROOT=/usr/local/go
-export GOROOT_BOOTSTRAP=/usr/local/go1.4
+export GOROOT_BOOTSTRAP=/Users/guanyu/go1.4
 export GOPATH=$HOME/go
 export CGO_ENABLED=0
 export GO15VENDOREXPERIMENT=1
@@ -123,6 +121,7 @@ alias v='sudo vim'
 alias k="pkill  -9 -f "
 alias kk="sudo pkill  -9 -f "
 alias date="date +%Y-%m-%d_%H:%M-%A"
+alias ta="tmux attach"
 FINISH="%{$terminfo[sgr0]%}"
 # }}}
 autoload colors zsh/terminfo
