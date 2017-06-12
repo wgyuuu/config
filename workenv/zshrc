@@ -7,6 +7,9 @@ if [ -f ~/.zsh_config ]; then
 	source ~/.zsh_config
 fi
 
+# crontab edit
+export EDITOR=vim
+
 # path
 export PATH=/usr/local/sbin:$PATH
 
