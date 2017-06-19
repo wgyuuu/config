@@ -34,7 +34,6 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
 # java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=$HOME/.m2/repository/
 
