@@ -74,6 +74,7 @@ alias superctl="supervisorctl -s http://localhost:9500 -u 'super_casino' -p 'cas
 alias g=git         
 alias gst='git status'
 alias gbr='git branch'
+alias gdf='git difftool --tool=vimdiff --no-prompt'
 
 if [ $(uname -s ) = "Linux" ] ; then
     alias ls='ls --color=auto  --time-style=+"%m月%d日 %H:%M"'
