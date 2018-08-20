@@ -67,6 +67,7 @@ alias cdgbin="cd ~/go/bin/"
 alias cdgsrc="cd ~/go/src/"
 alias cdgpkg="cd ~/go/pkg/"
 alias build="GOOS=linux GOARCH=amd64 go build"
+alias testcases="sed -n 's/func.*\(Test.*\)(.*/\1/p' | xargs | sed 's/ /|/g'"
 
 alias rf="rm -f"
 alias superctl="supervisorctl -s http://localhost:9500 -u 'super_casino' -p 'casino!!@@__))'"
@@ -123,8 +124,9 @@ alias cd..="cd .."
 alias v='sudo vim'
 alias k="pkill  -9 -f "
 alias kk="sudo pkill  -9 -f "
-alias date="date +%Y-%m-%d_%H:%M-%A"
 alias ta="tmux attach"
+alias datm="date +%Y-%m-%d_%H:%M-%A"
+alias datr="date -r "
 FINISH="%{$terminfo[sgr0]%}"
 # }}}
 autoload colors zsh/terminfo
