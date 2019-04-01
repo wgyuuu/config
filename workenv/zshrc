@@ -27,7 +27,7 @@ export PATH=/usr/local/sbin:$PATH
 # go
 export GOROOT=/usr/local/go
 export GOROOT_BOOTSTRAP=/Users/guanyu/go1.4
-export GOPATH=$HOME/go
+export GOPATH=$HOME/Workspace/go
 export CGO_ENABLED=0
 export GO15VENDOREXPERIMENT=1
 export PATH=$PATH:$GOROOT/bin
