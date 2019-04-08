@@ -12,6 +12,7 @@ export EDITOR=vim
 
 # path
 export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 # openssl
 #export ARCHFLAGS="-arch x86_64"
@@ -70,9 +71,7 @@ alias build="GOOS=linux GOARCH=amd64 go build"
 alias testcases="sed -n 's/func.*\(Test.*\)(.*/\1/p' | xargs | sed 's/ /|/g'"
 
 alias rf="rm -f"
-alias superctl="supervisorctl -s http://localhost:9500 -u 'super_casino' -p 'casino!!@@__))'"
-
-alias g=git         
+alias g=git
 alias gst='git status'
 alias gbr='git branch'
 alias gdf='git difftool --tool=vimdiff --no-prompt'
@@ -260,7 +259,8 @@ vcs_info_wrapper() {
 
 #当上一个命令不正常退出时的提示  及显示git 分支信息
 RPROMPT=$(echo "%(?..$RED%?$FINISH)")
-PROMPT=$(echo "%(!.%B$RED%n.%B$GREEN%n)@%m$CYAN %2~ $(vcs_info_wrapper)$WHITE%(!.#.$)%(1j.(%j jobs%).) %b")
+# PROMPT=$(echo "%(!.%B$RED%n.%B$GREEN%n)@%m$CYAN %2~ $(vcs_info_wrapper)$WHITE%(!.#.$)%(1j.(%j jobs%).) %b")
+PROMPT=$(echo "%(!.%B$RED%n.%B$GREEN%n)@megvii$CYAN %2~ $(vcs_info_wrapper)$WHITE%(!.#.$)%(1j.(%j jobs%).) %b")
 
 #在 Emacs终端 中使用 Zsh 的一些设置 及Eamcs tramp sudo 远程连接的设置
 if [[ "$TERM" == "dumb" ]]; then
@@ -271,7 +271,7 @@ if [[ "$TERM" == "dumb" ]]; then
     unsetopt prompt_subst
     unfunction precmd
     unfunction preexec
-    PS1='$ '    
+    PS1='$ '
 fi
 }
 # }}}
