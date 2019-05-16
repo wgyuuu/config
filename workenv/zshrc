@@ -75,7 +75,7 @@ alias g=git
 alias gst='git status'
 alias gbr='git branch'
 alias gdf='git difftool --tool=vimdiff --no-prompt'
-alias glog='git log --pretty=format:"%Cred%t%Creset %Cred%h%Creset %C(yellow)@%cn%Creset %s %Cgreen%ad%Creset" --graph --date=iso'
+alias gl='git log --pretty=format:"%Cred%t%Creset %Cred%h%Creset %C(yellow)@%cn%Creset %s %Cgreen%ad%Creset" --graph --date=iso'
 
 if [ $(uname -s ) = "Linux" ] ; then
     alias ls='ls --color=auto  --time-style=+"%m月%d日 %H:%M"'
