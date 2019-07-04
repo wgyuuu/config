@@ -63,10 +63,7 @@ if [ -d $HOME/python/bin/ ]; then
 fi
 
 alias md5sum="md5 -r"
-alias cdg="cd ~/go"
-alias cdgbin="cd ~/go/bin/"
-alias cdgsrc="cd ~/go/src/"
-alias cdgpkg="cd ~/go/pkg/"
+alias grep='grep --color=auto'
 alias build="GOOS=linux GOARCH=amd64 go build"
 alias testcases="sed -n 's/func.*\(Test.*\)(.*/\1/p' | xargs | sed 's/ /|/g'"
 
