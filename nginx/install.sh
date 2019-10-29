@@ -1,5 +1,7 @@
 #!/bin/bash
 
+version=1.11.1
+
 mkdir -p /path/to
 # 大小写转换第三方module
 wget -c https://github.com/replay/ngx_http_lower_upper_case/archive/master.zip -O /tmp/ngx_http_lower_upper_case.zip
@@ -16,8 +18,8 @@ cd /usr/local/src/pcre-8.35 && \
     make clean && \
     cd -
 
-tar -zxvf nginx-1.11.1.tar.gz -C /usr/local/
-ln -s /usr/local/nginx-1.11.1 /usr/local/nginx
+tar -zxvf nginx-$version.tar.gz -C /usr/local/
+ln -s /usr/local/nginx-$version /usr/local/nginx
 ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
 mkdir -p /etc/nginx
 

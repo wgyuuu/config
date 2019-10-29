@@ -44,6 +44,30 @@ set guioptions+=i
 set guioptions-=m
 set guioptions+=c
 
+"c/c++支持
+set exrc
+set secure
+"Project-specific options
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+"Filetype detection
+augroup project
+  autocmd!
+  autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+augroup END
+"Setting path variable
+let &path.="src/include,/usr/include/AL,"
+"Note
+set includeexpr=substitute(v:fname,'\\.','/','g')
+"Configure build system
+set makeprg=make\ -C\ ../build\ -j9
+nnoremap <F4> :make!<cr>
+nnoremap <F5> :!./my_great_program<cr>
+"Tip
+"='-I'.substitute(&path, ',', '\n-I', 'g')<cr>p
+
 "关闭vi兼容模式
 set nocompatible
 
@@ -67,6 +91,9 @@ set linespace=1
 
 "按完整单词折行
 set nolinebreak
+
+"ctrl+p时可修改
+set modifiable
 
 "命令行历史
 "set history=819222
@@ -124,10 +151,10 @@ Plugin 'The-NERD-Commenter'
   "支持单行和多行的选择，//格式
   map <c-h> ,c<space>
 
-Plugin 'Valloric/YouCompleteMe'
-	let g:ycm_key_list_select_completion = ['', '']
-	let g:ycm_key_list_previous_completion = ['']
-	let g:ycm_key_invoke_completion = '<C-Space>'
+" Plugin 'Valloric/YouCompleteMe'
+"	let g:ycm_key_list_select_completion = ['', '']
+"	let g:ycm_key_list_previous_completion = ['']
+"	let g:ycm_key_invoke_completion = '<C-Space>'
 
 Plugin 'Lokaltog/vim-easymotion'
 	let g:EasyMotion_smartcase = 1
@@ -174,10 +201,12 @@ Plugin 'ShowTrailingWhitespace'
 Plugin 'matchit.zip'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'zxqfl/tabnine-vim'
+Plugin 'rust-lang/rust.vim'
 "Plugin 'AutoClose'
 "Plugin 'yonchu/accelerated-smooth-scroll'
 "Plugin 'scrooloose/syntastic'
+"Plugin 'evanmiller/nginx-vim-syntax'
 
 call vundle#end()            " required
 
@@ -211,6 +240,9 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" rust
+let g:rust_clip_command = 'pbcopy'
 
 "ack 文件文本内容搜索
 map <F4> :Ack! -i 

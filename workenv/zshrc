@@ -13,6 +13,9 @@ export EDITOR=vim
 # path
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
+# rust path
+export PATH=~/.cargo/bin:$PATH
+
 
 # openssl
 #export ARCHFLAGS="-arch x86_64"
