@@ -2,7 +2,7 @@
 set helplang=cn
 
 "开启鼠标支持
-set mouse=a
+"set mouse=a
 
 "关闭自动折行
 "set wrap
@@ -201,8 +201,8 @@ Plugin 'ShowTrailingWhitespace'
 Plugin 'matchit.zip'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'zxqfl/tabnine-vim'
-Plugin 'rust-lang/rust.vim'
+"Plugin 'zxqfl/tabnine-vim'
+"Plugin 'rust-lang/rust.vim'
 "Plugin 'AutoClose'
 "Plugin 'yonchu/accelerated-smooth-scroll'
 "Plugin 'scrooloose/syntastic'
