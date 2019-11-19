@@ -224,6 +224,9 @@ filetype plugin on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" go
+let g:go_def_mode = 'gopls'
+
 " YCM settings
 let g:ycm_key_list_select_completion = ['', '']
 let g:ycm_key_list_previous_completion = ['']
@@ -245,7 +248,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:rust_clip_command = 'pbcopy'
 
 "ack 文件文本内容搜索
-map <F4> :Ack! -i 
+map <F4> :Ack! -i
 
 "code快捷键
 map <F9> :r ~/go/code/
