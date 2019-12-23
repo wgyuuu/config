@@ -71,6 +71,9 @@ nnoremap <F5> :!./my_great_program<cr>
 "关闭vi兼容模式
 set nocompatible
 
+"ftplugin锁文件
+set noreadonly
+
 "设置光标距离上下边界的距离
 set so=1
 
