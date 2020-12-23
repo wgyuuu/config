@@ -204,6 +204,7 @@ Plugin 'ShowTrailingWhitespace'
 Plugin 'matchit.zip'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'zivyangll/git-blame.vim'
 "Plugin 'zxqfl/tabnine-vim'
 "Plugin 'rust-lang/rust.vim'
 "Plugin 'AutoClose'
@@ -272,6 +273,9 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+"git blame¿ì½Ý¼ü
+nnoremap <Leader>z :<C-u>call gitblame#echo()<CR>
 
 " vim-go settings
 let g:go_fmt_command = "goimports"

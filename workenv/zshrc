@@ -30,14 +30,13 @@ export PATH=~/.cargo/bin:$PATH
 
 # go
 export GOROOT=/usr/local/go
-export GOROOT_BOOTSTRAP=/Users/guanyu/go1.4
 export GOPATH=$HOME/Workspace/go
 export GOARCH=amd64
 export GOOS=darwin
 export CGO_ENABLED=0
 export GO15VENDOREXPERIMENT=1
 export GOPROXY=https://goproxy.io
-export GOPRIVATE=*.gitlab.com,git.afpai.com
+export GOPRIVATE=git.zuoyebang.cc
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
@@ -71,7 +70,7 @@ fi
 
 alias md5sum="md5 -r"
 alias grep='grep --color=auto'
-alias build="GOOS=linux GOARCH=amd64 go build"
+alias build="CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build"
 alias testcases="sed -n 's/func.*\(Test.*\)(.*/\1/p' | xargs | sed 's/ /|/g'"
 
 alias rf="rm -f"
@@ -129,7 +128,7 @@ alias v='sudo vim'
 alias k="pkill  -9 -f "
 alias kk="sudo pkill  -9 -f "
 alias ta="tmux attach"
-alias datm="date +%Y-%m-%d_%H:%M-%A"
+alias datm="date '+%Y-%m-%d %H:%M:%S -%A'"
 alias datr="date -r "
 FINISH="%{$terminfo[sgr0]%}"
 # }}}
