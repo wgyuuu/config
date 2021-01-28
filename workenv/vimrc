@@ -140,6 +140,7 @@ Plugin 'VundleVim/Vundle.vim'
 " All of your Plugins must be added before the following line
 Plugin 'scrooloose/nerdtree'
 	map <C-n> :NERDTreeToggle<CR>
+	map <C-r> :NERDTreeFind<CR>
 	autocmd StdinReadPre * let s:std_in=1
     "打开vim时默认关闭
     "let NERDTreeQuitOnOpen=1
@@ -273,6 +274,9 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+
+" guru
+nmap <F8> :TagbarToggle<CR>
 
 "git blame快捷键
 nnoremap <Leader>z :<C-u>call gitblame#echo()<CR>
