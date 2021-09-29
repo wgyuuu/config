@@ -15,7 +15,13 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 # rust path
 export PATH=~/.cargo/bin:$PATH
+# yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # openssl
 #export ARCHFLAGS="-arch x86_64"
@@ -128,8 +134,6 @@ alias v='sudo vim'
 alias k="pkill  -9 -f "
 alias kk="sudo pkill  -9 -f "
 alias ta="tmux attach"
-alias datm="date '+%Y-%m-%d %H:%M:%S -%A'"
-alias datr="date -r "
 FINISH="%{$terminfo[sgr0]%}"
 # }}}
 autoload colors zsh/terminfo
@@ -428,3 +432,5 @@ POWERLINE_GIT_RENAMED="➜"
 POWERLINE_GIT_UNMERGED="═"
 
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
