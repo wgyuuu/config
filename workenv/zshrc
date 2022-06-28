@@ -43,23 +43,28 @@ export CGO_ENABLED=0
 export GO15VENDOREXPERIMENT=1
 export GOPROXY=https://goproxy.io
 export GOPRIVATE=git.zuoyebang.cc
+export GOSUMDB=sum.golang.google.cn
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
 # java
+export JAVA_HOME=/usr/libexec/java_home
 export PATH=$JAVA_HOME/bin:$PATH
-export CLASSPATH=$HOME/.m2/repository/
+#export CLASSPATH=$HOME/.m2/repository/
 
 # php
 export PATH=/usr/local/php7/bin:$PATH
 export PATH=/usr/local/php7/sbin:$PATH
 
 # maven
-export M2_HOME=/usr/local/apache-maven-3.3.9
+export M2_HOME=/usr/local/apache-maven-3.8.4
 export PATH=$PATH:$M2_HOME/bin
 
+# TiDB
+export PATH=$PATH:$HOME/.tiup/bin
+
 # docker
-export DOCKER_HOST=tcp://
+export DOCKER_HOST=tcp://localhost:2375
 
 # ansible
 export ANSIBLE_HOSTS=/Users/admin/ansible_hosts
@@ -86,6 +91,8 @@ alias gbr='git branch'
 alias gdf='git difftool --tool=vimdiff --no-prompt'
 alias gl='git log --pretty=format:"%Cred%t%Creset %Cred%h%Creset %C(yellow)@%cn%Creset %s %Cgreen%ad%Creset" --graph --date=iso'
 
+alias port='sudo port'
+
 if [ $(uname -s ) = "Linux" ] ; then
     alias ls='ls --color=auto  --time-style=+"%m月%d日 %H:%M"'
     alias la='ls -a --color=auto  '
@@ -110,7 +117,9 @@ fi
 alias tumx='tmux'
 alias ta='tmux attach'
 alias tt='tmux new  -s $USER'
-tmux_porcess_cnt=`pgrep tmux |wc -l`
+
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
 
 # if [ $tmux_porcess_cnt -eq 0  ] ; then
 #     tmux new -A -s $USER
@@ -119,6 +128,8 @@ tmux_porcess_cnt=`pgrep tmux |wc -l`
 # fi
 echo "ta short for tmux attach"
 
+# docker
+# alias swagger='docker run --rm -it  --user $(id -u):$(id -g) -e GOPATH=$(go env GOPATH):/go -v $HOME:$HOME -w $(pwd) quay.io/goswagger/swagger'
 
 alias sl='ls'
 alias mkdir='mkdir -p'
@@ -300,9 +311,6 @@ setopt AUTO_MENU
 #横向排列
 setopt  LIST_ROWS_FIRST
 
-autoload -U compinit
-compinit
-
 #自动补全缓存
 #zstyle ':completion::complete:*' use-cache on
 #zstyle ':completion::complete:*' cache-path .zcache
@@ -414,7 +422,7 @@ bindkey "\t" user-complete
 #[[ -s "/Users/admin/.gvm/scripts/gvm" ]] && source "/Users/admin/.gvm/scripts/gvm"
 
 if [ -f ~/.zsh/golang-config-zsh ]; then
-    . ~/.zsh/golang-config-zsh 
+    . ~/.zsh/golang-config-zsh
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -434,3 +442,5 @@ POWERLINE_GIT_UNMERGED="═"
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH=/Users/wgyuuu/.tiup/bin:$PATH

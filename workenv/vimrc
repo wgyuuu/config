@@ -140,7 +140,7 @@ Plugin 'VundleVim/Vundle.vim'
 " All of your Plugins must be added before the following line
 Plugin 'scrooloose/nerdtree'
 	map <C-n> :NERDTreeToggle<CR>
-	map <C-r> :NERDTreeFind<CR>
+	map <C-m> :NERDTreeFind<CR>
 	autocmd StdinReadPre * let s:std_in=1
     "打开vim时默认关闭
     "let NERDTreeQuitOnOpen=1
@@ -149,6 +149,8 @@ Plugin 'scrooloose/nerdtree'
 	"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 	"number
 	let NERDTreeShowLineNumbers = 1
+	" 现实隐藏文件
+	" let NERDTreeShowHidden=1
 
 Plugin 'The-NERD-Commenter'
   let NERDShutUp=1
@@ -199,19 +201,21 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/ZoomWin'
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ShowTrailingWhitespace'
 Plugin 'matchit.zip'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'zivyangll/git-blame.vim'
+Plugin 'othree/xml-vim'
 "Plugin 'zxqfl/tabnine-vim'
 "Plugin 'rust-lang/rust.vim'
 "Plugin 'AutoClose'
 "Plugin 'yonchu/accelerated-smooth-scroll'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()            " required
 
@@ -257,6 +261,9 @@ map <F4> :Ack! -i
 
 "code快捷键
 map <F9> :r ~/go/code/
+
+"xml插件
+map <F2> :silent 1,$!xmllint -format -recover - 2>/dev/null <CR>
 
 " set mapleader
 let mapleader = ","
@@ -467,3 +474,21 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+" rust
+let g:rust_clip_command = 'pbcopy'
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" Initialize plugin system
+call plug#end()
+
