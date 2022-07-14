@@ -48,7 +48,7 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
 # java
-export JAVA_HOME=/usr/libexec/java_home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
 #export CLASSPATH=$HOME/.m2/repository/
 
@@ -426,6 +426,8 @@ if [ -f ~/.zsh/golang-config-zsh ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/.pwdx_for_mac.zsh ] && source ~/.pwdx_for_mac.zsh
 
 
 # oh my zsh
