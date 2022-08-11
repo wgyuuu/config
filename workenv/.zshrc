@@ -449,3 +449,6 @@ POWERLINE_GIT_UNMERGED="═"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export PATH=/Users/wgyuuu/.tiup/bin:$PATH
+
+unset ALL_PROXY
+
