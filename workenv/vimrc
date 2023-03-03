@@ -8,6 +8,16 @@ set helplang=cn
 "set wrap
 set nowrap
 
+"python
+let g:pymode_python = 'python3'
+autocmd VimEnter *.py python3 sys.path.append('.')
+"autocmd BufWritePost *.py !flake8 %
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E225'
+let g:autopep8_aggressive=2
+let g:jedi#force_py_version=3
+let g:jedi#smart_auto_mappings = 0
+
 "设置折叠方式
 set foldmethod=manual
 
@@ -216,6 +226,11 @@ Plugin 'othree/xml-vim'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'rust-lang/rust.vim'
+
+Plugin 'nvie/vim-flake8'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'tell-k/vim-autopep8'
+
 
 call vundle#end()            " required
 
@@ -448,7 +463,7 @@ filetype plugin indent on           "打开文件配置
 "包括其他各种语言，如php java javascript 都能自动补全
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=python3complete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
