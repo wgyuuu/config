@@ -29,6 +29,9 @@ set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,gb2312,chinese,prc,taiwan,latin-1
 set termencoding=utf-8
 
+"fzf
+set rtp+=/opt/local/share/fzf/vim
+
 "ÏÔÊ¾ÐÐºÅ
 set number
 " set rnu
@@ -502,7 +505,7 @@ call plug#begin()
 "   - e.g. `call plug#begin('~/.vim/plugged')`
 "   - Avoid using standard Vim directory names like 'plugin'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Initialize plugin system
 call plug#end()
