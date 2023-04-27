@@ -139,8 +139,7 @@ set background=dark
 filetype off        " required
 
 "Ag
-" set runtimepath^=~/.vim/bundle/ag.vim
-" let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -212,6 +211,8 @@ Plugin 'autoload_cscope.vim'
 Plugin 'wincent/command-t'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+	map <c-u> :Ack<space>
+
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/ZoomWin'
 "Plugin 'SirVer/ultisnips'
@@ -221,7 +222,6 @@ Plugin 'matchit.zip'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'zivyangll/git-blame.vim'
-Plugin 'othree/xml-vim'
 "Plugin 'zxqfl/tabnine-vim'
 "Plugin 'rust-lang/rust.vim'
 "Plugin 'AutoClose'
