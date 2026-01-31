@@ -1,14 +1,21 @@
 #!/bin/zsh
 #
-
 ZSH_THEME="powerline"
 
 if [ -f ~/.zsh_config ]; then
 	source ~/.zsh_config
 fi
+if [ -f ~/.bash_config ]; then
+	source ~/.bash_config
+fi
+if [ -f ~/.bash_profile ]; then
+	source ~/.bash_profile
+fi
 
 # crontab edit
 export EDITOR=vim
+# vim 设置
+let g:jedi#force_py_version = 3
 
 # path
 export PATH=/usr/local/bin:$PATH
@@ -19,9 +26,9 @@ export PATH=~/.cargo/bin:$PATH
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # openssl
 #export ARCHFLAGS="-arch x86_64"
@@ -39,7 +46,7 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/Workspace/go
 export GOARCH=amd64
 export GOOS=darwin
-export CGO_ENABLED=0
+export CGO_ENABLED=1
 export GO15VENDOREXPERIMENT=1
 export GOPROXY=https://goproxy.cn
 export GOPRIVATE=git.zuoyebang.cc
@@ -48,7 +55,7 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
 # java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_333.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=$HOME/.m2/repository/
 
@@ -75,17 +82,22 @@ export PATH=$PATH:/Users/admin/hubot/bin
 # mongodb
 export PATH=/usr/local/mongodb/bin:$PATH
 
+
 alias md5sum="md5 -r"
 alias grep='grep --color=auto'
 alias build="CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build"
 alias testcases="sed -n 's/func.*\(Test.*\)(.*/\1/p' | xargs | sed 's/ /|/g'"
 
 alias rf="rm -f"
+
+# git工具
 alias g=git
 alias gst='git status'
 alias gbr='git branch'
 alias gdf='git difftool --tool=vimdiff --no-prompt'
 alias gl='git log --pretty=format:"%Cred%t%Creset %Cred%h%Creset %C(yellow)@%cn%Creset %s %Cgreen%ad%Creset" --graph --date=iso'
+
+alias lg=lazygit
 
 alias port='sudo port'
 
@@ -116,6 +128,8 @@ alias tt='tmux new  -s $USER'
 
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
+
+alias vf='vim $(fzf)'
 
 # if [ $tmux_porcess_cnt -eq 0  ] ; then
 #     tmux new -A -s $USER
@@ -239,7 +253,6 @@ bindkey "^[r" history-incremental-search-backward
 bindkey "^[n" down-line-or-history
 bindkey "^[p" up-line-or-history
 bindkey ^\U backward-kill-line
-
 
 
 # {{{ 命令提示符
@@ -416,6 +429,7 @@ user-complete(){
 zle -N user-complete
 bindkey "\t" user-complete
 #[[ -s "/Users/admin/.gvm/scripts/gvm" ]] && source "/Users/admin/.gvm/scripts/gvm"
+#
 
 if [ -f ~/.zsh/golang-config-zsh ]; then
     . ~/.zsh/golang-config-zsh
@@ -442,8 +456,4 @@ export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_mo
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
 
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export PATH=/Users/wgyuuu/.tiup/bin:$PATH
-
-source ~/.bash_profile

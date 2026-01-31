@@ -140,6 +140,7 @@ filetype off        " required
 
 "Ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ag_working_path_mode="r"
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -233,6 +234,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'rking/ag.vim'
 
 
 call vundle#end()            " required
